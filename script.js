@@ -5,6 +5,8 @@ const closeButton = document.querySelector('#cancel');
 const submitButton = document.querySelector('#submit');
 const inputs = Array.from(document.querySelectorAll('form input'));
 
+const library = [];
+
 addButton.addEventListener('click', () => {
     dialog.showModal();
 });
@@ -36,3 +38,9 @@ function Book(title, author, pages, hasRead){
         return `${this.title} by ${this.author}, ${this.pages} pages, ${hasRead ? 'read it' : 'not read yet'}`
     }
 }
+
+function addBookToLibrary(title, author, pages, hasRead){
+        const newBook = new Book(title, author, pages, hasRead)
+        library.push(newBook);
+}
+
