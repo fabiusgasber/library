@@ -9,6 +9,28 @@
         <header></header>
         <main>
             <h1>Lorem ipsum dolor sit amet</h1>
+            <dialog>
+                <form action="" method="dialog" id="bookForm">
+                    <div>
+                        <label for="bookTitle">Book Title</label>
+                        <input type="text" name="bookTitle" required>
+                    </div>
+                    <div>
+                        <label for="bookAuthor">Book Author</label>
+                        <input type="text" name="bookAuthor" required>
+                    </div>
+                    <div>
+                        <label for="bookPages">Book Pages</label>
+                        <input type="number" name="bookPages" required>
+                    </div>
+                    <div>
+                        <label for="hasRead">Have you read the book yet?</label>
+                        <input type="checkbox" name="hasRead">
+                    </div>
+                    <button id="cancel" value="cancel" type="button">Cancel</button>
+                    <button id="submit" value="default">Submit</button>
+                </form>
+            </dialog>
         </main>
     </body>
     <footer></footer>
