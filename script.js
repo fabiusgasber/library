@@ -44,3 +44,19 @@ function addBookToLibrary(title, author, pages, hasRead){
         library.push(newBook);
 }
 
+function displayLibrary(){
+    libraryDiv.innerHTML = '';
+    library.forEach(book => {
+        const bookCard = document.createElement('div');
+        const bookTitle = document.createElement('h1');
+        const bookAuthor = document.createElement('p');
+        const bookPages = document.createElement('p');
+        const bookRead = document.createElement('p');
+        bookTitle.textContent = book.title;
+        bookAuthor.textContent = book.author;
+        bookPages.textContent = book.pages;
+        bookRead.textContent = book.hasRead ? 'read it' : 'not read yet';
+        bookCard.append(bookTitle, bookAuthor, bookPages, bookRead);
+        libraryDiv.appendChild(bookCard);
+    })
+}
