@@ -103,6 +103,9 @@ dialog::backdrop {
     gap: 1em;
 }
 
+.card input[type='checkbox']{
+    appearance: none;
+}
 
 form > div {
     display: flex;
