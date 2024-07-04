@@ -107,6 +107,35 @@ dialog::backdrop {
     appearance: none;
 }
 
+.card input[type='checkbox'] + label {
+    background-color: yellow;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease-in;
+}
+
+.card input[type='checkbox'] + label:hover {
+    background-color: rgb(228, 228, 2);
+}
+
+
+.card input[type='checkbox']:checked + label {
+    background-color: green;
+}
+
+.card input[type='checkbox']:checked + label:hover {
+    background-color: rgb(0, 88, 0);
+}
+
+
+input[type=checkbox] + label::after {
+    content: ' have not read it yet';
+}
+
+input[type=checkbox]:checked + label::after {
+    content: ' already read';
+}
+
 form > div {
     display: flex;
     justify-content: space-between;
