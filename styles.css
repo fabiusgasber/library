@@ -39,6 +39,10 @@ button:active {
     transform: translateY(1px);
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+}
 
 dialog {
     border: 1px solid black;
