@@ -1,4 +1,4 @@
-const addButton = document.querySelector('dialog + button');
+const addButton = document.querySelector('#addBook');
 const libraryDiv = document.querySelector('.library');
 const dialog = document.querySelector('dialog');
 const closeButton = document.querySelector('#cancel');
@@ -46,17 +46,22 @@ function addBookToLibrary(title, author, pages, hasRead){
 
 function displayLibrary(){
     libraryDiv.innerHTML = '';
-    library.forEach(book => {
+    library.forEach((book, index) => {
         const bookCard = document.createElement('div');
-        const bookTitle = document.createElement('h1');
+        const bookTitle = document.createElement('p');
         const bookAuthor = document.createElement('p');
         const bookPages = document.createElement('p');
-        const bookRead = document.createElement('p');
+        const bookRead = document.createElement('label');
+        const readCheckbox = document.createElement('input');
+        readCheckbox.type = 'checkbox';
+        readCheckbox.id = `didRead${index}`
+        bookRead.htmlFor = `didRead${index}`
         bookTitle.textContent = book.title;
         bookAuthor.textContent = book.author;
-        bookPages.textContent = book.pages;
-        bookRead.textContent = book.hasRead ? 'read it' : 'not read yet';
-        bookCard.append(bookTitle, bookAuthor, bookPages, bookRead);
+        bookPages.textContent = `${book.pages} pages`;
+        readCheckbox.checked = book.hasRead ? true : false;
+        bookCard.append(bookTitle, bookAuthor, bookPages, readCheckbox, bookRead);
+        bookCard.className = 'card'
         libraryDiv.appendChild(bookCard);
     })
 }
