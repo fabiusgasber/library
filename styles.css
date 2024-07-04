@@ -47,6 +47,11 @@ header{
 dialog {
     border: 1px solid black;
 }
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 #bookForm input {
     font-family: inherit;
     font-size: 15px;
