@@ -12,23 +12,22 @@
             <dialog>
                 <form action="" method="dialog" id="bookForm">
                     <div>
-                        <label for="bookTitle">Book Title</label>
-                        <input type="text" name="bookTitle" required>
+                        <input type="text" name="bookTitle" placeholder="Title" required>
                     </div>
                     <div>
-                        <label for="bookAuthor">Book Author</label>
-                        <input type="text" name="bookAuthor" required>
+                        <input type="text" name="bookAuthor" placeholder="Author" required>
                     </div>
                     <div>
-                        <label for="bookPages">Book Pages</label>
-                        <input type="number" name="bookPages" required>
+                        <input type="number" name="bookPages" placeholder="Pages" required>
                     </div>
                     <div>
-                        <label for="hasRead">Have you read the book yet?</label>
+                        <label for="hasRead">Have you read it?</label>
                         <input type="checkbox" name="hasRead">
                     </div>
-                    <button id="cancel" value="cancel" type="button">Cancel</button>
-                    <button id="submit" value="default">Submit</button>
+                    <div>
+                        <button id="cancel" value="cancel" type="button">Cancel</button>
+                        <button id="submit" value="default">Submit</button>
+                    </div>
                 </form>
             </dialog>
             <button type="button">Add Book</button>
