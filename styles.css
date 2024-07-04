@@ -82,4 +82,8 @@ dialog::backdrop {
     visibility: visible;
 }
 
+#bookForm button {
+    margin: 0;
+    padding: 5px 10px;
+}
 }
