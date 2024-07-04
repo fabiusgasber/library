@@ -96,6 +96,14 @@ dialog::backdrop {
     padding: 1em;
 }
 
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 1em;
+}
+
+
 form > div {
     display: flex;
     justify-content: space-between;
