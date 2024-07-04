@@ -19,7 +19,26 @@ h1 {
     margin-block-end: 0;
 }
 
+button {
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin: 5em 0;
+    font-family: inherit;
+    font-size: 15px;
+    transition: background-color 0.3s ease-in;
+    background: none;
+}
+
+button:hover {
     background-color: black;
+    color: yellow;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
 
 dialog {
     border: 1px solid black;
