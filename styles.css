@@ -62,4 +62,24 @@ dialog::backdrop {
     outline: 1px solid yellow;
 }
 
+#bookForm input[type='checkbox'] {
+    appearance: none;
+    border: 1px solid black;
+    position: relative;
+    color: black;
+}
+
+#bookForm input[type='checkbox']::before {
+    position: absolute;
+    content: '✔';
+    visibility: hidden;
+    top: -0.3em;
+    right: -0.2em;
+}
+
+
+#bookForm input[type='checkbox']:checked::before {
+    visibility: visible;
+}
+
 }
