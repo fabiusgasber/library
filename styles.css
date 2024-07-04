@@ -4,8 +4,24 @@
 }
 
 html {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
     font-family: montserrat, sans-serif
 }
+
+body {
+    margin: 2em 5em;
+}
+
+h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
     background-color: black;
-    color: white;
+
+dialog {
+    border: 1px solid black;
+}
 }
