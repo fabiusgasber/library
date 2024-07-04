@@ -47,4 +47,14 @@ header{
 dialog {
     border: 1px solid black;
 }
+#bookForm input {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#bookForm input:focus-visible {
+    outline: 1px solid yellow;
+}
+
 }
