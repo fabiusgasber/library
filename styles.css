@@ -140,6 +140,10 @@ input[type=checkbox]:checked + label::after {
     content: ' already read';
 }
 
+input[type="number"] {
+    width: 200px;
+}
+
 form > div {
     display: flex;
     justify-content: space-between;
