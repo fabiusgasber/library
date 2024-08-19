@@ -73,3 +73,7 @@ function displayLibrary(){
         libraryDiv.appendChild(bookCard);
     })
 }
+
+addBookToLibrary('1984', 'George Orwell', 328, true);
+addBookToLibrary('Dune', 'Frank Herbert', 632, true);
+displayLibrary();
