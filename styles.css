@@ -96,6 +96,10 @@ dialog::backdrop {
     padding: 1em;
 }
 
+.card button {
+    margin: 1em 0;
+}
+
 .library {
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px);
