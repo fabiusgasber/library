@@ -44,6 +44,11 @@ function addBookToLibrary(title, author, pages, hasRead){
         library.push(newBook);
 }
 
+function deleteBook(index){
+    library.splice(index, 1);
+    displayLibrary();
+}
+
 function displayLibrary(){
     libraryDiv.innerHTML = '';
     library.forEach((book, index) => {
@@ -53,6 +58,9 @@ function displayLibrary(){
         const bookPages = document.createElement('p');
         const bookRead = document.createElement('label');
         const readCheckbox = document.createElement('input');
+        const removeBook = document.createElement('button');
+        removeBook.textContent = "Remove"
+        removeBook.addEventListener('click', () => deleteBook(index));
         readCheckbox.type = 'checkbox';
         readCheckbox.id = `didRead${index}`
         bookRead.htmlFor = `didRead${index}`
@@ -60,7 +68,7 @@ function displayLibrary(){
         bookAuthor.textContent = book.author;
         bookPages.textContent = `${book.pages} pages`;
         readCheckbox.checked = book.hasRead ? true : false;
-        bookCard.append(bookTitle, bookAuthor, bookPages, readCheckbox, bookRead);
+        bookCard.append(bookTitle, bookAuthor, bookPages, readCheckbox, bookRead, removeBook);
         bookCard.className = 'card'
         libraryDiv.appendChild(bookCard);
     })
