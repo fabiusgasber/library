@@ -24,29 +24,32 @@ dialog.addEventListener('close', () => {
 
 dialog.addEventListener('submit', e => {
     e.preventDefault();
-    addBookToLibrary(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].checked);
+    const newBook = new Book(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].checked)
+    Book.addBookToLibrary(newBook);
     displayLibrary();
     dialog.close();
 })
 
-function Book(title, author, pages, hasRead){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
-    this.info = function() {
+class Book {
+    constructor(title, author, pages, hasRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.hasRead = hasRead;
+    }
+
+    info() {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${hasRead ? 'read it' : 'not read yet'}`
     }
-}
 
-function addBookToLibrary(title, author, pages, hasRead){
-        const newBook = new Book(title, author, pages, hasRead)
+    static addBookToLibrary(newBook){
         library.push(newBook);
-}
+    }
 
-function deleteBook(index){
-    library.splice(index, 1);
-    displayLibrary();
+    static deleteBook(index){
+        library.splice(index, 1);
+        displayLibrary();
+    }
 }
 
 function displayLibrary(){
@@ -60,7 +63,7 @@ function displayLibrary(){
         const readCheckbox = document.createElement('input');
         const removeBook = document.createElement('button');
         removeBook.textContent = "Remove"
-        removeBook.addEventListener('click', () => deleteBook(index));
+        removeBook.addEventListener('click', () => Book.deleteBook(index));
         readCheckbox.type = 'checkbox';
         readCheckbox.id = `didRead${index}`
         bookRead.htmlFor = `didRead${index}`
@@ -73,7 +76,8 @@ function displayLibrary(){
         libraryDiv.appendChild(bookCard);
     })
 }
-
-addBookToLibrary('1984', 'George Orwell', 328, true);
-addBookToLibrary('Dune', 'Frank Herbert', 632, true);
+const book1984 = new Book('1984', 'George Orwell', 328, true)
+Book.addBookToLibrary(book1984);
+const dune = new Book('Dune', 'Frank Herbert', 632, true)
+Book.addBookToLibrary(dune);
 displayLibrary();
