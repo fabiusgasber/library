@@ -40,8 +40,6 @@ const getInput = (type) => inputs.filter(input => input.type === type);
 const textInputs = getInput("text");
 textInputs.forEach(textInput => textInput.addEventListener("focusout", checkText));
 
-const numberInputs = getInput("number");
-
 class Book {
     constructor(title, author, pages, hasRead) {
         this.title = title;
