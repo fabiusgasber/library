@@ -13,10 +13,10 @@
                 <form action="" method="dialog" id="bookForm">
                     <h1>Add new book</h1>
                     <div>
-                        <input type="text" name="bookTitle" placeholder="Title" required>
+                        <input type="text" name="bookTitle" placeholder="Title" required pattern="\b[a-zA-Z]{3,}\b">
                     </div>
                     <div>
-                        <input type="text" name="bookAuthor" placeholder="Author" required>
+                        <input type="text" name="bookAuthor" placeholder="Author" required pattern="\b[a-zA-Z]{3,}\b">
                     </div>
                     <div>
                         <input type="number" name="bookPages" placeholder="Pages" min="0" max="9999" required>

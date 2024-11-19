@@ -30,6 +30,14 @@ dialog.addEventListener('submit', e => {
     dialog.close();
 })
 
+const checkText = (e) => {
+    const text = e.target;
+    text.validity.patternMismatch ? text.setCustomValidity("Text should be longer than two letters and not contain any invalid characters") : text.setCustomValidity("");
+}
+
+const textInputs = inputs.filter(input => input.type === "text");
+textInputs.forEach(textInput => textInput.addEventListener("focusout", checkText));
+
 class Book {
     constructor(title, author, pages, hasRead) {
         this.title = title;
@@ -39,7 +47,7 @@ class Book {
     }
 
     info() {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${hasRead ? 'read it' : 'not read yet'}`
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.hasRead ? 'read it' : 'not read yet'}`
     }
 
     static addBookToLibrary(newBook){

@@ -58,8 +58,12 @@ dialog::backdrop {
     padding: 5px;
 }
 
-#bookForm input:focus-visible {
-    outline: 1px solid yellow;
+#bookForm input:user-invalid{
+    outline: 1px solid red;
+}
+
+#bookForm input:valid{
+    outline: 1px solid green;
 }
 
 #bookForm input[type='checkbox'] {
