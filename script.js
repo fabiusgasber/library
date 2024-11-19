@@ -35,8 +35,12 @@ const checkText = (e) => {
     text.validity.patternMismatch ? text.setCustomValidity("Text should be longer than two letters and not contain any invalid characters") : text.setCustomValidity("");
 }
 
-const textInputs = inputs.filter(input => input.type === "text");
+const getInput = (type) => inputs.filter(input => input.type === type);
+
+const textInputs = getInput("text");
 textInputs.forEach(textInput => textInput.addEventListener("focusout", checkText));
+
+const numberInputs = getInput("number");
 
 class Book {
     constructor(title, author, pages, hasRead) {
